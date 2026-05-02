@@ -7,6 +7,17 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
+    /* Land investment palette */
+    --land-dark: #0b0e0b;
+    --land-dark-2: #111411;
+    --land-green: #1a3328;
+    --land-green-light: #2a5040;
+    --land-green-accent: #3d7a5f;
+    --land-beige: #c8b89a;
+    --land-beige-light: #e8ddd0;
+    --land-beige-dark: #9a8a72;
+    --land-white: #f4f0eb;
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
@@ -97,5 +108,204 @@
 
   body {
     @apply bg-background text-foreground;
+    background-color: var(--land-dark);
+    color: var(--land-beige-light);
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-cormorant {
+    font-family: "Cormorant", serif;
+  }
+  .font-ibm {
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  .text-beige {
+    color: var(--land-beige);
+  }
+  .text-beige-light {
+    color: var(--land-beige-light);
+  }
+  .text-beige-dark {
+    color: var(--land-beige-dark);
+  }
+  .text-green-accent {
+    color: var(--land-green-accent);
+  }
+  .bg-land-dark {
+    background-color: var(--land-dark);
+  }
+  .bg-land-dark-2 {
+    background-color: var(--land-dark-2);
+  }
+  .bg-land-green {
+    background-color: var(--land-green);
+  }
+  .bg-land-green-light {
+    background-color: var(--land-green-light);
+  }
+  .bg-land-beige {
+    background-color: var(--land-beige);
+  }
+  .border-beige {
+    border-color: var(--land-beige);
+  }
+  .border-beige-dark {
+    border-color: var(--land-beige-dark);
+  }
+  .border-green {
+    border-color: var(--land-green-light);
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes line-grow {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.9s ease forwards;
+  }
+  .animate-fade-in {
+    animation: fade-in 1.2s ease forwards;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+  .delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+  .delay-800 {
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+  .delay-1000 {
+    animation-delay: 1s;
+    opacity: 0;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(200, 184, 154, 0.15);
+  }
+
+  .cta-btn {
+    background-color: var(--land-beige);
+    color: var(--land-dark);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    border: none;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      transform 0.2s ease;
+    display: inline-block;
+  }
+  .cta-btn:hover {
+    background-color: var(--land-beige-light);
+    transform: translateY(-1px);
+  }
+
+  .number-large {
+    font-family: "Cormorant", serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--land-beige);
+  }
+
+  .hero-title {
+    font-family: "Cormorant", serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--land-beige-light);
+  }
+
+  .section-label {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--land-beige-dark);
+  }
+
+  .block-title {
+    font-family: "Cormorant", serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--land-beige-light);
+  }
+
+  .body-text {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--land-beige-dark);
+  }
+
+  .green-tag {
+    display: inline-block;
+    background-color: var(--land-green);
+    border: 1px solid var(--land-green-light);
+    color: var(--land-beige);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--land-green-accent),
+      transparent
+    );
   }
 }
