@@ -68,7 +68,7 @@ export default function Index() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 pb-24 pt-32 w-full">
           <div className="animate-fade-up">
-            <span className="green-tag mb-8 inline-block">Холмец · Московская область</span>
+            <span className="green-tag mb-8 inline-block">Холмец · Московская область · Участки от 8 соток</span>
           </div>
 
           <h1 className="hero-title animate-fade-up delay-200 mt-6 max-w-3xl">
@@ -77,30 +77,57 @@ export default function Index() {
           </h1>
 
           <p
-            className="animate-fade-up delay-400 mt-6"
+            className="animate-fade-up delay-400 mt-5"
             style={{
               fontFamily: "'Cormorant', serif",
-              fontSize: "clamp(1.3rem, 2.5vw, 1.9rem)",
+              fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)",
               fontWeight: 300,
               color: "var(--land-beige-dark)",
-              lineHeight: 1.4,
+              lineHeight: 1.45,
+              maxWidth: "640px",
             }}
           >
-            Потенциал роста стоимости — в 2–3 раза за 24 месяца
+            Рост стоимости в 2–3 раза за 24 месяца —<br />
+            за счёт дорог, электричества и развития локации
           </p>
 
-          <div className="animate-fade-up delay-600 mt-6 flex gap-8" style={{ color: "var(--land-beige-dark)", fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.9rem", letterSpacing: "0.05em" }}>
-            <span>Участки от 8 соток</span>
-            <span style={{ color: "var(--land-green-accent)" }}>·</span>
-            <span>150 км от Москвы</span>
+          {/* Вход / Выход */}
+          <div
+            className="animate-fade-up delay-600 mt-8 inline-flex gap-10 px-7 py-5"
+            style={{
+              border: "1px solid rgba(200,184,154,0.18)",
+              backgroundColor: "rgba(11,14,11,0.55)",
+              backdropFilter: "blur(8px)",
+            }}
+          >
+            <div>
+              <p style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--land-beige-dark)" }}>Вход</p>
+              <p style={{ fontFamily: "'Cormorant', serif", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 300, color: "var(--land-beige-light)", lineHeight: 1.1, marginTop: "0.25rem" }}>456 000 ₽</p>
+            </div>
+            <div style={{ width: "1px", backgroundColor: "rgba(200,184,154,0.15)" }} />
+            <div>
+              <p style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--land-green-accent)" }}>Потенциал выхода</p>
+              <p style={{ fontFamily: "'Cormorant', serif", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 300, color: "var(--land-green-accent)", lineHeight: 1.1, marginTop: "0.25rem" }}>от 900 000 ₽+</p>
+            </div>
           </div>
 
           <div className="animate-fade-up delay-800 mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <CTA />
-            <p style={{ color: "var(--land-beige-dark)", fontSize: "0.8rem", letterSpacing: "0.08em", fontFamily: "'IBM Plex Sans', sans-serif" }}>
-              Сегодня — просто земля.&nbsp;&nbsp;Завтра — сформированная локация.
-            </p>
           </div>
+
+          {/* Слоган внизу */}
+          <p
+            className="animate-fade-up delay-1000 mt-6"
+            style={{
+              fontFamily: "'IBM Plex Sans', sans-serif",
+              fontSize: "0.8rem",
+              letterSpacing: "0.1em",
+              color: "var(--land-beige-dark)",
+              textTransform: "uppercase",
+            }}
+          >
+            Кто заходит сейчас — зарабатывает.&nbsp;&nbsp;Кто позже — покупает дороже.
+          </p>
         </div>
       </section>
 
